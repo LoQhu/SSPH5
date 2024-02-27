@@ -1,0 +1,33 @@
+﻿@page "/"
+@inject AuthenticationStateProvider _authProvider;
+@inject SSPH5.Tools.HashHandler HashHandler;
+@inject SSPH5.Models.ToDoList toDoListModel;
+@inject SSPH5.Models.Cpr cprModel;
+
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+
+
+
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+<EditForm>
+    <div>
+        <label for="cprInp">Cpr:</label>
+        <InputText id="cprInp" @bind-Value = "_cpr"></InputText>
+    </div>
+</EditForm>
+
+@code
+{
+    private string? _cpr { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = _authProvider;
+        
+    }
+}
