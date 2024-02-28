@@ -3,11 +3,10 @@
 @inject SSPH5.Tools.HashHandler HashHandler;
 @inject SSPH5.Models.ToDoList toDoListModel;
 @inject SSPH5.Models.Cpr cprModel;
+@inject SSPH5.Tools.SymEncryptionHandler encryptionHandler;
 
 @using Microsoft.AspNetCore.Authorization
 @attribute [Authorize]
-
-
 
 
 <PageTitle>Home</PageTitle>
@@ -20,6 +19,7 @@ Welcome to your new app.
         <label for="cprInp">Cpr:</label>
         <InputText id="cprInp" @bind-Value = "_cpr"></InputText>
     </div>
+    <button type="submit">Click me baby!</button>
 </EditForm>
 
 @code
